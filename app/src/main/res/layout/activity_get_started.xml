@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Signing.GetStartedActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/logo_transparent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:fontFamily="@font/typo_round"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="40sp"
+                android:text="@string/app_name"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/typo_round"
+            android:textStyle="bold"
+            android:textColor="@color/colorLightGrey"
+            android:textSize="30sp"
+            android:layout_marginTop="25dp"
+            android:text="Starting learning\nfrom today"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/rocko"
+            android:textColor="@color/colorGrey"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:text="Get a course from here you want to learn and start learning from today. So, what are you waiting for?"/>
+
+        <TextView
+            android:id="@+id/btn_get_started"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/typo_round"
+            android:textColor="@color/colorWhite"
+            android:text="Get Started"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:background="@drawable/bg_purple"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="338dp"
+        android:layout_height="350dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/isomert"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="-10dp"
+        android:fontFamily="@font/anydore"
+        android:layout_above="@id/powered_by"
+        android:text="Powered By"
+        android:textSize="25sp"
+        android:textColor="@color/colorWhite" />
+
+    <LinearLayout
+        android:id="@+id/powered_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/cs"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/typo_round"
+            android:text="Caffeine Softwares"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+</RelativeLayout>

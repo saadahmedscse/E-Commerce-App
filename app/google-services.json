@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "407395416571",
+    "firebase_url": "https://artenon-4039e-default-rtdb.firebaseio.com",
+    "project_id": "artenon-4039e",
+    "storage_bucket": "artenon-4039e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407395416571:android:e998781665111ca375b35e",
+        "android_client_info": {
+          "package_name": "com.caffeine.artenon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407395416571-a9fgls0384oerdg0620cdhtlnblh9aeq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl5a_rZzVT2i2_uHDlJtdqNeHh35vv0BE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407395416571-a9fgls0384oerdg0620cdhtlnblh9aeq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
