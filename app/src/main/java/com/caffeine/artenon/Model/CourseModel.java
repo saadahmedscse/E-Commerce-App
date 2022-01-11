@@ -2,24 +2,24 @@ package com.caffeine.artenon.Model;
 
 public class CourseModel {
 
-    private String name, price, category, popularity, reviews, sales, advanced, picture;
+    private String level, price, category, popularity, reviews, sales, advanced, newest;
 
     public CourseModel() {
     }
 
-    public CourseModel(String name, String price, String category, String popularity, String reviews, String sales, String advanced, String picture) {
-        this.name = name;
+    public CourseModel(String level, String price, String category, String popularity, String reviews, String sales, String advanced, String newest) {
+        this.level = level;
         this.price = price;
         this.category = category;
         this.popularity = popularity;
         this.reviews = reviews;
         this.sales = sales;
         this.advanced = advanced;
-        this.picture = picture;
+        this.newest = newest;
     }
 
-    public String getName() {
-        return name;
+    public String getLevel() {
+        return level;
     }
 
     public String getPrice() {
@@ -46,7 +46,7 @@ public class CourseModel {
         return advanced;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getNewest() {
+        return newest;
     }
 }

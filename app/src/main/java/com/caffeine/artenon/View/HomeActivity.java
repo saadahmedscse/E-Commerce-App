@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -31,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private ImageView iconAllTopic, iconPopular, iconNewest, iconAdvanced;
     private LinearLayout allTopic, popular, newest, advanced;
+    private View placeholder, placeholder2;
 
     private LinearLayoutManager horizontalLayoutManager;
     private RecyclerView category;
@@ -50,8 +52,8 @@ public class HomeActivity extends AppCompatActivity {
         courseTypeClickEvent();
         getCourses("all");
 
-        Categories.add("Android Development");
         Categories.add("Web Development");
+        Categories.add("Android Development");
         Categories.add("IOS Development");
         Categories.add("Artificial Intelligence");
         Categories.add("Machine Learning");
@@ -70,9 +72,12 @@ public class HomeActivity extends AppCompatActivity {
         iconNewest = findViewById(R.id.icon_newest);
         iconPopular = findViewById(R.id.icon_popular);
         iconAdvanced = findViewById(R.id.icon_advanced);
+        placeholder = findViewById(R.id.placeholder);
+        placeholder2 = findViewById(R.id.placeholder2);
 
         Categories = new ArrayList<>();
         list = new ArrayList<>();
+        filteredList = new ArrayList<>();
         category = findViewById(R.id.cat_recycler_view);
         horizontalLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         category.setLayoutManager(horizontalLayoutManager);
@@ -174,7 +179,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setCategoryItems(){
-        CategoryAdapter adapter = new CategoryAdapter(Categories, HomeActivity.this);
+        CategoryAdapter adapter = new CategoryAdapter(Categories, HomeActivity.this, courseItem, placeholder2);
         category.setAdapter(adapter);
     }
 
@@ -189,8 +194,12 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 }
 
-                CourseAdapter adapter = new CourseAdapter(list);
-                filteredList = new ArrayList<>();
+                CourseAdapter adapter = new CourseAdapter(list, "purple");
+                if (adapter.getItemCount() > 0) {
+                    placeholder.setVisibility(View.GONE);
+                } else {
+                    placeholder.setVisibility(View.VISIBLE);
+                }
 
                 if (request.equals("all")){
                     courseViewPager.setAdapter(adapter);
@@ -202,27 +211,27 @@ public class HomeActivity extends AppCompatActivity {
                             filteredList.add(obj);
                         }
                     }
-                    CourseAdapter popAdapter = new CourseAdapter(filteredList);
+                    CourseAdapter popAdapter = new CourseAdapter(filteredList, "red");
                     courseViewPager.setAdapter(popAdapter);
                 }
 
                 else if (request.equals("newest")){
                     for (CourseModel obj : list){
-                        if (obj.getPicture().equals("new")){
+                        if (obj.getNewest().equals("yes")){
                             filteredList.add(obj);
                         }
                     }
-                    CourseAdapter popAdapter = new CourseAdapter(filteredList);
+                    CourseAdapter popAdapter = new CourseAdapter(filteredList, "blue");
                     courseViewPager.setAdapter(popAdapter);
                 }
 
                 else if (request.equals("advanced")){
                     for (CourseModel obj : list){
-                        if (obj.getName().startsWith("A")){
+                        if (obj.getLevel().startsWith("A")){
                             filteredList.add(obj);
                         }
                     }
-                    CourseAdapter popAdapter = new CourseAdapter(filteredList);
+                    CourseAdapter popAdapter = new CourseAdapter(filteredList, "green");
                     courseViewPager.setAdapter(popAdapter);
                 }
             }
